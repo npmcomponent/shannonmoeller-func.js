@@ -1,0 +1,20 @@
+{
+  "name": "func",
+  "description": "A better JavaScript constructor pattern.",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/shannonmoeller/func.js.git"
+  },
+  "main": "func.js",
+  "dependencies": {
+    "copier": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "scripts": {
+    "test": "make test"
+  }
+}
