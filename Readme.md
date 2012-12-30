@@ -16,11 +16,11 @@
 
 ### `Func(...)`
 
-  Returns an instance of Func. Calls `Func.prototype.init` with provided arguments.
+  Returns an instance of `Func`. Calls `Func.prototype.init` with provided arguments.
 
 ### `new Func(...)`
 
-  Also, returns an instance of Func. Also calls `this.init` with provided arguments.
+  Also, returns an instance of `Func`. Also calls `this.init` with provided arguments.
   
 ### `Func.call(...)`
 
@@ -32,7 +32,7 @@
   
 ### `Func.extend([proto], [stat])`
 
-  Returns a function whose `prototype` property is an instance of `Func`. A `subclass` if you must.
+  Returns a function whose `prototype` object is an instance of `Func`. A `subclass` if you must.
 
 ## License
 
