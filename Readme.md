@@ -1,11 +1,11 @@
 
-# constructor
+# func
 
   A better JavaScript constructor pattern.
 
 ## Installation
 
-    $ component install shannonmoeller/constructor
+    $ component install shannonmoeller/func.js
 
 ## API
 
