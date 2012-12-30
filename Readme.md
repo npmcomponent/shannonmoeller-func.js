@@ -32,7 +32,7 @@
   
 ### `Func.extend([proto], [stat])`
 
-  Returns a function whose `prototype` object is an instance of `Func`. A `subclass` if you must.
+  Returns a function whose `prototype` object is an instance of `Func`. A subclass if you must.
 
 ## License
 
