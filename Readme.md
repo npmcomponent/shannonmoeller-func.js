@@ -32,11 +32,11 @@ assert.ok(Sub.hasOwnProperty('extend'));
 
 ## Installation
 
-  Server:
+  Server-side:
   
     $ npm install func
     
-  Client:
+  Client-side:
 
     $ component install shannonmoeller/func.js
 
