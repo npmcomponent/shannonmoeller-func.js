@@ -1,6 +1,6 @@
-# func
+# func.js - Zero class and proud of it.
 
-  A better JavaScript constructor pattern. Takes away the bad parts of `new`, but maintains a distinction between static properties and prototype properties. Unlike `Object.create`.
+  A better JavaScript constructor pattern. Abstracts away the bad parts of `new`, but maintains a distinction between static properties and prototype properties. Unlike the effable `Object.create`.
 
 ``` js
 var Func = require('func');
@@ -25,6 +25,9 @@ assert.strictEqual(obj.a, 1);
 // Check static
 assert.strictEqual(Sub.b, 2);
 assert.strictEqual(obj.b, undefined);
+
+// Chainable
+assert.ok(Sub.hasOwnProperty('extend'));
 ```
 
 ## Installation
@@ -58,6 +61,11 @@ assert.strictEqual(obj.b, undefined);
 ### `Func.extend([proto], [stat])`
 
   Returns a function whose `prototype` object is an instance of `Func`. A subclass if you must.
+  
+## Shout-outs
+
+- Douglas Crockford ([Prototypal Inheritance](http://javascript.crockford.com/prototypal.html), or, the birth of `Object.create`.)
+- John Resig ([Simple JavaScript Inheritance](http://ejohn.org/blog/simple-javascript-inheritance/))
 
 ## License
 
