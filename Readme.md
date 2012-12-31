@@ -88,7 +88,7 @@ Grandkid.yell('hello', 'world'); // alerts 'hello world'
 
 ## Shout-outs
 
-- Douglas Crockford ([Prototypal Inheritance](http://javascript.crockford.com/prototypal.html), or, the birth of `Object.create`.)
+- Douglas Crockford ([Prototypal Inheritance](http://javascript.crockford.com/prototypal.html), or, the birth of `Object.create`. [Bad Parts](http://oreilly.com/javascript/excerpts/javascript-good-parts/bad-parts.html))
 - John Resig ([Simple JavaScript Inheritance](http://ejohn.org/blog/simple-javascript-inheritance/))
 
 ## License
