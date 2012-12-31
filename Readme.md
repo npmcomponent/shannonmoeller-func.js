@@ -1,14 +1,14 @@
 # func.js - Zero class and proud of it.
 
-  A better JavaScript constructor pattern. Abstracts away the bad parts of `new`, but maintains a distinction between instance and static members, unlike the illustrious `Object.create`.
+  A better JavaScript constructor pattern. Abstracts away the [bad parts][bad] of `new`, but maintains a distinction between instance and static members, unlike the illustrious `Object.create`.
 
 ## Installation
 
-  Server-side ([Node.js](http://nodejs.org)):
+  Server-side ([Node.js][njs]):
 
     $ npm install func
 
-  Client-side ([component(1)](https://github.com/component)):
+  Client-side ([component(1)][cmp]):
 
     $ component install shannonmoeller/func.js
 
@@ -88,9 +88,15 @@ Grandkid.yell('hello', 'world'); // alerts 'hello world'
 
 ## Shout-outs
 
-- Douglas Crockford ([Prototypal Inheritance](http://javascript.crockford.com/prototypal.html), or, the birth of `Object.create`. [Bad Parts](http://oreilly.com/javascript/excerpts/javascript-good-parts/bad-parts.html))
-- John Resig ([Simple JavaScript Inheritance](http://ejohn.org/blog/simple-javascript-inheritance/))
+- Douglas Crockford ([Prototypal Inheritance][pty] (or, the birth of `Object.create`) and [Bad Parts][bad].)
+- John Resig ([Simple JavaScript Inheritance][smp])
 
 ## License
 
   MIT
+
+[bad]: http://oreilly.com/javascript/excerpts/javascript-good-parts/bad-parts.html
+[cmp]: https://github.com/component
+[njs]: http://nodejs.org
+[pty]: http://javascript.crockford.com/prototypal.html
+[smp]: http://ejohn.org/blog/simple-javascript-inheritance
