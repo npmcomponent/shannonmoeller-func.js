@@ -2,7 +2,7 @@
 /*global assert, describe, it */
 /**
  * @fileOverview
- * Constructor Tests File
+ * Func Tests File
  *
  * @author Shannon Moeller
  * @version 1.0
