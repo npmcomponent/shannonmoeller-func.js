@@ -30,7 +30,7 @@ var Func = function() {};
  * @return {Function} Child function.
  */
 Func.extend = function extend(prot, stat) {
-    // Whether to call this.init().
+    // Whether to execute `this.init()`.
     var init = false;
 
     // Since `extend` is a static property of a function,
@@ -38,7 +38,7 @@ Func.extend = function extend(prot, stat) {
     var parent = new this();
 
     // A function which always returns an instance.
-    var fn = function F() {
+    var Child = function F() {
         var self = this;
 
         // Call with `new` if no one else has.
@@ -47,11 +47,11 @@ Func.extend = function extend(prot, stat) {
             init = false;
 
             // Just extend the prototype chain.
-            self = new fn();
+            self = new F();
         }
 
         if (init) {
-            // Time to execute the init.
+            // Execute `this.init()`.
             self.init.apply(self, arguments);
         } else {
             // Init next time around.
@@ -63,19 +63,19 @@ Func.extend = function extend(prot, stat) {
     };
 
     // Instance members.
-    fn.prototype = copier(parent, prot, {
+    Child.prototype = copier(parent, prot, {
         // Ensure constructor value.
-        constructor: fn
+        constructor: Child
     });
 
     // Static members.
-    copier(fn, stat, {
+    copier(Child, stat, {
         // Bless child with superpowers.
         extend: extend
     });
 
     // Our shiney new child function.
-    return fn;
+    return Child;
 };
 
 /**
