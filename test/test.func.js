@@ -47,5 +47,9 @@ describe('Func()', function() {
         // Check static
         assert.strictEqual(Sub.b, 2);
         assert.strictEqual(obj.b, undefined);
+
+        // Check fertility
+        assert.ok(Sub.hasOwnProperty('extend'));
+        assert.strictEqual(typeof Sub.extend, 'function');
     });
 });
