@@ -15,24 +15,26 @@
 var copier = require('copier');
 
 /**
- * A generic constructor.
+ * No-op generic constructor.
  *
  * @constructor
  */
 var Func = function() {};
 
 /**
- * Inheritance through extension.
+ * Creates a child of the current function.
  *
  * @param {Object} prot A prototype object.
  * @param {Object} stat A static object.
- * @return {Function}
+ * @this {Func} The current function.
+ * @return {Function} Child function.
  */
-Func.extend = function(prot, stat) {
+Func.extend = function extend(prot, stat) {
     // Whether to call this.init().
     var init = false;
 
-    // The essence of Object.create.
+    // Since `extend` is a static property of a function,
+    // the value of `this` here will be that function.
     var parent = new this();
 
     // A function which always returns an instance.
@@ -60,26 +62,28 @@ Func.extend = function(prot, stat) {
         return self;
     };
 
-    // Prototype (instance) properties.
+    // Instance members.
     fn.prototype = copier(parent, prot, {
+        // Ensure constructor value.
         constructor: fn
     });
 
-    // Static properties.
+    // Static members.
     copier(fn, stat, {
-        extend: this.extend
+        // Bless child with superpowers.
+        extend: extend
     });
 
-    // Our shiney new constructor.
+    // Our shiney new child function.
     return fn;
 };
 
 /**
- * Expose Func.
+ * Expose a useful Func.
  */
 module.exports = Func.extend({
     /**
-     * A do-nothing default initializer.
+     * No-op default initializer.
      *
      * @return {Object}
      */
