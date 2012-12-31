@@ -37,7 +37,7 @@ Func('hello', 'world'); // logs 'hello world'
 ### `new Func([...args])`
 
   Same as `Func([...args])`. Rest in peace `new`.
-  
+
 ``` js
 new Func('hello', 'world'); // logs 'hello world'
 ```
@@ -45,7 +45,7 @@ new Func('hello', 'world'); // logs 'hello world'
 ### `Func.call(ctx, [...args])`
 
   Nice try. Same as `Func([...args])`.
-  
+
 ``` js
 Func.call({}, 'hello', 'world'); // logs 'hello world'
 ```
@@ -53,7 +53,7 @@ Func.call({}, 'hello', 'world'); // logs 'hello world'
 ### `Func.apply(ctx, args)`
 
   Guess. Yep, same as `Func([...args])`.
-  
+
 ``` js
 Func.apply({}, ['hello', 'world']); // logs 'hello world'
 ```
