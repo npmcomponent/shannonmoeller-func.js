@@ -34,38 +34,80 @@ assert.strictEqual(typeof Sub.extend, 'function');
 ## Installation
 
   Server-side ([Node.js](http://nodejs.org)):
-  
+
     $ npm install func
-    
+
   Client-side ([component(1)](https://github.com/component)):
 
     $ component install shannonmoeller/func.js
 
 ## API
 
-### `Func(...args)`
+### `Func([...args])`
 
-  Returns an instance of `Func`. Calls `Func.prototype.init` with provided arguments.
+  `...args` Zero or more arguments to pass to `init`.
 
-### `new Func(...args)`
+  Returns an instance of `Func`. Calls `this.init` with provided arguments.
+
+``` js
+var Func = require('func');
+
+Func.prototype.init = function (foo, bar) {
+    console.log(foo, bar);
+};
+
+Func('hello', 'world'); // logs 'hello world'
+```
+
+### `new Func([...args])`
+
+  `...args` Zero or more arguments to pass to `init`.
 
   Also returns an instance of `Func`. Also calls `this.init` with provided arguments.
-  
-### `Func.call(ctx, ...args)`
 
-  Nice try. Same as above.
-  
+### `Func.call(ctx, [...args])`
+
+  `ctx` A clever attempt to break `this`.
+
+  `...args` Zero or more arguments to pass to `init`.
+
+  Nice try. Same as `Func([...args])`.
+
 ### `Func.apply(ctx, args)`
 
-  Guess.
-  
+  `ctx` Another clever attempt to break `this`.
+
+  `args` An array of arguments to pass to `init`.
+
+  Guess. Yep, same as `Func([...args])`.
+
 ### `Func.extend([prot], [stat])`
 
   `prot` An object containing instance members.
 
   `stat` An object containing static members.
 
-  Returns a function whose `prototype` object is an instance of `Func`—a subclass if you must. Conveniently copies given instance and static members to the appropriate objects.
+  Returns a function whose `prototype` object is an instance of `Func`—a subclass if you must. Conveniently copies given instance and static members to the appropriate objects. The new function is also blessed with its own `.extend()`, you know, for kids.
+
+``` js
+var Func = require('func');
+
+var Kid = Func.extend();
+
+var Grandkid = Kid.extend({
+    bar: 'world',
+    init: function (foo) {
+        console.log(foo, this.bar);
+    }
+}, {
+    yell: function (foo, bar) {
+        alert(foo + ' ' + bar);
+    }
+});
+
+Grandkid('hello'); // logs 'hello world'
+Grandkid.yell('hello', 'world'); // alerts 'hello world'
+```
 
 ## Shout-outs
 

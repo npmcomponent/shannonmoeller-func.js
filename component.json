@@ -1,7 +1,7 @@
 {
   "name": "func",
   "description": "A better JavaScript constructor pattern.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "repo": "shannonmoeller/func.js",
   "main": "func.js",
   "dependencies": {

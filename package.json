@@ -1,7 +1,7 @@
 {
   "name": "func",
   "description": "A better JavaScript constructor pattern.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "http://github.com/shannonmoeller/func.js.git"

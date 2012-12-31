@@ -5,7 +5,7 @@
  * Func Tests File
  *
  * @author Shannon Moeller
- * @version 1.0
+ * @version 0.1.0
  */
 
 'use strict';
@@ -24,32 +24,43 @@ describe('Func()', function() {
         assert(Func.call(this) instanceof Func);
         assert(Func.apply(null) instanceof Func);
     });
+});
 
-    it('should be easily extendable', function() {
-        var prot = { a: 1 };
-        var stat = { b: 2 };
-
+describe('Func.extend([prot], [stat])', function() {
+    it('should return a child function whose prototype is an instance of the parent', function() {
         // Extend Func
-        var Sub = Func.extend(prot, stat);
+        var Child = Func.extend();
+
+        // Extend Child
+        var Grandchild = Child.extend();
 
         // Create instance
-        var obj = Sub();
+        var obj = Grandchild();
 
         // Check chain
         assert.ok(obj instanceof Func);
-        assert.ok(obj instanceof Sub);
+        assert.ok(obj instanceof Child);
+        assert.ok(obj instanceof Grandchild);
+    });
+
+    it('should copy given instance and static members to the appropriate objects', function() {
+        // Extend Func
+        var Child = Func.extend(
+            { a: 1 }, // instance members
+            { b: 2 }  // static members
+        );
+
+        // Create instance
+        var obj = Child();
 
         // Check prototype
-        assert.strictEqual(Sub.a, undefined);
-        assert.strictEqual(Sub.prototype.a, 1);
+        assert.strictEqual(Child.a, undefined);
+        assert.strictEqual(Child.prototype.a, 1);
         assert.strictEqual(obj.a, 1);
 
         // Check static
-        assert.strictEqual(Sub.b, 2);
+        assert.strictEqual(Child.b, 2);
+        assert.strictEqual(Child.prototype.b, undefined);
         assert.strictEqual(obj.b, undefined);
-
-        // Check fertility
-        assert.ok(Sub.hasOwnProperty('extend'));
-        assert.strictEqual(typeof Sub.extend, 'function');
     });
 });
