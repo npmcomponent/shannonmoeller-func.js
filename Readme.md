@@ -26,7 +26,7 @@ assert.strictEqual(obj.a, 1);
 assert.strictEqual(Sub.b, 2);
 assert.strictEqual(obj.b, undefined);
 
-// Chainable
+// Check fertility
 assert.ok(Sub.hasOwnProperty('extend'));
 ```
 
