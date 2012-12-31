@@ -2,35 +2,6 @@
 
   A better JavaScript constructor pattern. Abstracts away the bad parts of `new`, but maintains a distinction between instance and static members, unlike the illustrious `Object.create`.
 
-``` js
-var Func = require('func');
-
-// Extend Func
-var Sub = Func.extend(
-    { a: 1 }, // instance members
-    { b: 2 }  // static members
-);
-
-// Create instance
-var obj = Sub();
-
-// Check chain
-assert.ok(obj instanceof Func);
-assert.ok(obj instanceof Sub);
-
-// Check instance
-assert.strictEqual(Sub.a, undefined);
-assert.strictEqual(obj.a, 1);
-
-// Check static
-assert.strictEqual(Sub.b, 2);
-assert.strictEqual(obj.b, undefined);
-
-// Check fertility
-assert.ok(Sub.hasOwnProperty('extend'));
-assert.strictEqual(typeof Sub.extend, 'function');
-```
-
 ## Installation
 
   Server-side ([Node.js](http://nodejs.org)):
@@ -53,7 +24,11 @@ assert.strictEqual(typeof Sub.extend, 'function');
 var Func = require('func');
 
 Func.prototype.init = function (foo, bar) {
-    console.log(foo, bar);
+    this.yell(foo, bar);
+};
+
+Func.prototype.yell = function (baz, bat) {
+    console.log(baz, bat);
 };
 
 Func('hello', 'world'); // logs 'hello world'
@@ -61,25 +36,27 @@ Func('hello', 'world'); // logs 'hello world'
 
 ### `new Func([...args])`
 
-  `...args` Zero or more arguments to pass to `init`.
-
-  Also returns an instance of `Func`. Also calls `this.init` with provided arguments.
+  Same as `Func([...args])`. Rest in peace `new`.
+  
+``` js
+new Func('hello', 'world'); // logs 'hello world'
+```
 
 ### `Func.call(ctx, [...args])`
 
-  `ctx` A clever attempt to break `this`.
-
-  `...args` Zero or more arguments to pass to `init`.
-
   Nice try. Same as `Func([...args])`.
+  
+``` js
+Func.call({}, 'hello', 'world'); // logs 'hello world'
+```
 
 ### `Func.apply(ctx, args)`
 
-  `ctx` Another clever attempt to break `this`.
-
-  `args` An array of arguments to pass to `init`.
-
   Guess. Yep, same as `Func([...args])`.
+  
+``` js
+Func.apply({}, ['hello', 'world']); // logs 'hello world'
+```
 
 ### `Func.extend([prot], [stat])`
 
