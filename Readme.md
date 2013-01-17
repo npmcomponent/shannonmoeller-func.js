@@ -90,12 +90,14 @@ Grandkid.yell('hello', 'world'); // alerts 'hello world'
 
 - Douglas Crockford ([Prototypal Inheritance][pty] (or, the birth of `Object.create`) and [Bad Parts][bad].)
 - John Resig ([Simple JavaScript Inheritance][smp])
+- Dean Edwards ([A Base Class for JavaScript Inheritance][bas])
 
 ## License
 
   MIT
 
 [bad]: http://oreilly.com/javascript/excerpts/javascript-good-parts/bad-parts.html
+[bas]: http://dean.edwards.name/weblog/2006/03/base
 [cmp]: https://github.com/component
 [njs]: http://nodejs.org
 [pty]: http://javascript.crockford.com/prototypal.html
