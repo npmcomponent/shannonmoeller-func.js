@@ -12,7 +12,7 @@
 /**
  * Modules.
  */
-var copier = require('copier');
+// commented out by npm-component: var copier = require('copier');
 
 /**
  * No-op generic constructor.

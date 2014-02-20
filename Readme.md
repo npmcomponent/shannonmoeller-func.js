@@ -1,3 +1,4 @@
+*This repository is a mirror of the [component](http://component.io) module [shannonmoeller/func.js](http://github.com/shannonmoeller/func.js). It has been modified to work with NPM+Browserify. You can install it using the command `npm install npmcomponent/shannonmoeller-func.js`. Please do not open issues or send pull requests against this repo. If you have issues with this repo, report it to [npmcomponent](https://github.com/airportyh/npmcomponent).*
 # func.js - Zero class and proud of it.
 
   A better JavaScript constructor pattern. Abstracts away the [bad parts][bad] of `new`, but maintains a distinction between instance and static members, unlike the illustrious `Object.create`.

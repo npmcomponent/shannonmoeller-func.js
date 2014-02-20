@@ -1,20 +1,9 @@
 {
-  "name": "func",
+  "name": "shannonmoeller-func.js",
   "description": "A better JavaScript constructor pattern.",
   "version": "0.1.0",
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/shannonmoeller/func.js.git"
-  },
   "main": "func.js",
   "dependencies": {
-    "copier": "*"
-  },
-  "devDependencies": {
-    "mocha": "*",
-    "should": "*"
-  },
-  "scripts": {
-    "test": "make test"
+    "shannonmoeller-copier.js": "git://github.com/npmcomponent/shannonmoeller-copier.js.git"
   }
 }
